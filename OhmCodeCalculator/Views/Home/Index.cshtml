@@ -1,0 +1,63 @@
+﻿
+@model  OhmCodeCalculator.Models.BandColors
+
+<div class="jumbotron">
+    <h1>ASP.NET MVC Pattern</h1>
+    <p class="lead">Project - Tool to calculate resistance in Ohms.</p>
+
+</div>
+<div class="Container">
+    
+    <div class="resistor">
+        <div class="leftSide"></div>
+        <div id="firstBand" class="band"></div>
+        <div id="secondBand" class="band"></div>
+        <div id="thirdBand" class="band"></div>
+        <div id="fourthBand" class="band"></div>
+        <div class="rightSide"></div>
+    </div>
+    
+    <div class="drpDown">
+        <div>
+            @Html.Label("BandA", "1st Band")
+            @Html.DropDownListFor(m => m.Ohm, new SelectList(Model.Ohm, "Key", "Value"), htmlAttributes: new { @class = "form-control", id = "drpBandA" })
+        </div>
+        <div>
+            @Html.Label("BandB", "2nd Band")
+            @Html.DropDownListFor(m => m.Ohm, new SelectList(Model.Ohm, "Key", "Value"), htmlAttributes: new { @class = "form-control", id = "drpBandB" })
+        </div>
+        <div>
+            @Html.Label("BandC", "Multiplier")
+            @Html.DropDownListFor(m => m.Multiplier, new SelectList(Model.Multiplier, "Key", "Value"), htmlAttributes: new { @class = "form-control", id = "drpBandC" })
+        </div>
+        <div>
+            @Html.Label("BandD", "Tolerance")
+            @Html.DropDownListFor(m => m.Tolerance, new SelectList(Model.Tolerance, "Key", "Value"), htmlAttributes: new { @class = "form-control", id = "drpBandD" })
+        </div>
+    </div>
+
+    <div id="errorDiv"></div>
+    <div id="divResult" >        
+        <div>
+            <div>
+                @Html.Label("lblMininumResistance", "Minimum Resistance")
+            </div>
+            <div>
+                @Html.TextBox("txtMinimumResistance", "0", htmlAttributes: new { @class = "form-control" }) Ohms
+            </div>
+        </div>
+        <div>
+            <div>
+                @Html.Label("lblMaximumResistance", "Maximum Resistance")
+            </div>
+            <div>
+                @Html.TextBox("txtMaximumResistance", "0", htmlAttributes: new { @class = "form-control" }) Ohms
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/calculator.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,143 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.Container {
+    display: flex;
+    flex-direction: column;
+    border-color: burlywood;
+}
+
+.resistor {
+    flex-grow: 2;
+    text-align: center;
+}
+
+    .resistor > * {
+        margin-right: -0.3em;
+        display: inline-block;
+        background-color: #e5d8c2;
+        width: 70px;
+        height: 100px;
+    }
+
+    .resistor .leftSide,
+    .resistor .rightSide {
+        border-radius: 10px;
+    }
+
+    .resistor .band {
+        position: relative;
+        width: 50px;
+        height: 60px;
+        margin-bottom: 17px;
+    }
+
+        .resistor .band:after {
+            content: ' ';
+            position: absolute;
+            left: .3em;
+            width: 20px;
+            height: 60px;
+        }
+
+        .resistor .band.black:after {
+            background-color: black;
+        }
+
+        .resistor .band.brown:after {
+            background-color: brown;
+        }
+
+        .resistor .band.red:after {
+            background-color: red;
+        }
+
+        .resistor .band.orange:after {
+            background-color: orange;
+        }
+
+        .resistor .band.yellow:after {
+            background-color: yellow;
+        }
+
+        .resistor .band.green:after {
+            background-color: green;
+        }
+
+        .resistor .band.blue:after {
+            background-color: blue;
+        }
+
+        .resistor .band.violet:after {
+            background-color: violet;
+        }
+
+        .resistor .band.gray:after {
+            background-color: gray;
+        }
+
+        .resistor .band.white:after {
+            background-color: white;
+        }
+
+        .resistor .band.gold:after {
+            background-color: gold;
+        }
+
+        .resistor .band.silver:after {
+            background-color: silver;
+        }
+
+        .resistor .band.pink:after {
+            background-color: pink;
+        }
+
+.drpDown {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 640px) {
+    .resistor .band {
+        width: 30px;
+        height: 40px;
+        margin-bottom: 14px;
+    }
+
+        .resistor .band:after {
+            height: 40px !important;
+        }
+
+    .resistor > * {
+        width: 60px;
+        height: 70px;
+    }
+
+    .drpClass {
+        flex-direction: column !important;
+    }
+
+        .drpClass div {
+            width: 100% !important;
+        }
+}
